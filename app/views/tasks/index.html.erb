@@ -1,0 +1,15 @@
+<h1>Todoアプリ</h1>
+<ul>
+    <% @tasks.each do |task| %>
+     <li>
+        <%= check_box_tag '', '' %>
+        <%= task.title %>
+        <%= link_to('編集', '/tasks/#{task.id}/edit', method: :post) %>
+        <%= link_to('削除',
+        '/tasks/#{task.id}/destroy',
+        method: :delete,
+        data: {confirm: '削除してもよろしいですか？'}) %>
+     </li>
+     <% end %>
+</ul>
+<%= link_to '新規追加', '/tasks/new' %>
