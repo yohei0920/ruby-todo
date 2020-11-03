@@ -1,0 +1,13 @@
+<h1>新規追加画面</h1>
+<%= form_tag('/tasks/create') do %>
+    <p>
+        <% f.label :title %>
+        <%= f.text_field :title %>
+        <% if @task.errors.any? %>
+            <%= @task.errors.messages[:title][0] %>
+        <% end %>
+    </p>
+    <p>
+        <%= f.submit('/tasks/create') %>
+    </p>
+<% end %>

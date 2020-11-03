@@ -1,0 +1,13 @@
+<h1>編集画面</h1>
+<%= form_for @task do |f| %>
+    <p>
+        <% f.label :title %>
+        <%= f.text_field :title %>
+        <% if @task.errors.any? %>
+            <%= @task.errors.messages[:title][0] %>
+        <% end %>
+    </p>
+    <p>
+        <%= f.submit('tasks/update') %>
+    </p>
+<% end %>
